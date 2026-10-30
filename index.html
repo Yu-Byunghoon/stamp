@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마운트그램 추천인 자동 복사</title>
+  <script>
+    window.onload = function() {
+      const code = "N7PW645V";
+      const targetUrl = "https://app.foreststamp.kr";
+
+      // 클립보드 복사 실행
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(() => {
+          alert("추천인 코드(" + code + ")가 복사되었습니다!\n마운트그램 회원가입 페이지로 이동합니다.");
+          window.location.href = targetUrl;
+        }).catch(() => {
+          alert("추천인 코드: " + code);
+          window.location.href = targetUrl;
+        });
+      } else {
+        alert("추천인 코드: " + code);
+        window.location.href = targetUrl;
+      }
+    };
+  </script>
+</head>
+<body>
+  <p style="text-align: center; margin-top: 50px; font-family: sans-serif; font-size: 16px;">
+    추천인 코드를 복사 중입니다. 잠시만 기다려 주세요...
+  </p>
+</body>
+</html>
